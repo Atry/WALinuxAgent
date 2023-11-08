@@ -237,9 +237,6 @@ class ProvisionHandler(object):
         self.osutil.conf_sudoer(ovfenv.username,
                                 nopasswd=ovfenv.user_password is None)
 
-        logger.info("Configure sshd")
-        self.osutil.conf_sshd(ovfenv.disable_ssh_password_auth)
-
         self.deploy_ssh_pubkeys(ovfenv)
         self.deploy_ssh_keypairs(ovfenv)
 
